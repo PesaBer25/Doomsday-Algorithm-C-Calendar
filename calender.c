@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 int anchor_day(int);
 int doomsDay_date(int,int);
 int leap_year(int);
@@ -8,6 +9,7 @@ int day_of_week(int,int,int);
 void print_calender(int,int);
 int ends_on(int,int);
 void print_year(int);
+void today(void);
 
 void author(){
     printf("\n__________________________________Author: Mark Emmanuel_________________________________");
@@ -19,8 +21,9 @@ int main(void){
     printf("\n1. Find day of the week\n");
     printf("2. Print a Months's Calender\n");
     printf("3. Print a Year's Calender\n");
+    printf("4. When is Today\n");
     printf("\n____________________________________Enter Choice__________________________________\n");
-    printf("\t\nChoice(1,2 or 3): ");
+    printf("\t\nChoice(1,2,3 or 4): ");
     scanf("%d",&option);
     if(option == 1){
         printf("\nEnter the Date(DD MM YY): ");
@@ -41,10 +44,21 @@ int main(void){
         scanf("%d",&year);
         print_year(year);
         author();
+    }else if(option == 4){
+        today();
     }else{
         printf("Invalid Choice ");
     }
     return 0;
+}
+
+void today(void){
+    SYSTEMTIME date;
+    GetLocalTime(&date);
+    printf("\nToday is %s %d %s %d\n\n",month_day_words(day_of_week(date.wDay,date.wMonth,date.wYear),-1),date.wDay,month_day_words(-1,date.wMonth),date.wYear);
+    printf("\t%s %d\n",month_day_words(-1,date.wMonth),date.wYear);
+    print_calender(day_of_week(date.wDay,date.wMonth,date.wYear),ends_on(date.wMonth,date.wYear));
+    author();
 }
 
 void print_year(int year){
