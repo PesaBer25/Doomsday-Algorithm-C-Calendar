@@ -17,6 +17,7 @@ void author(){
 
 int main(void){
     int day,date,month,year,option;
+    printf("\nA Calender implemented using the Doomsday Algorithm to find the day of the week as the Base principle\n\n");
     printf("<-------------------------------------Options------------------------------------>\n");
     printf("\n1. Find day of the week\n");
     printf("2. Print a Months's Calender\n");
