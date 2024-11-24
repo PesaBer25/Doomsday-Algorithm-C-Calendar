@@ -18,28 +18,28 @@ A C program that implements the Doomsday Algorithm to perform calendar-related o
 
 # Prerequisites
 - A C compiler (e.g., GCC, MinGW, or Visual Studio).
-- A Windows or Linux system.
+- A Windows system.
 
 # Installation
 
 1. Clone the repository:
-   ```bash
+   ```cmd
    git clone https://github.com/PesaBer25/Doomsday-Algorithm-C-Calendar.git
    ```
 2. Navigate to the project directory:
-   ```bash
+   ```cmd
    cd Doomsday-Algorithm-C-Calendar
    ```
 3. Compile the program:
-   ```bash
-   gcc -o calendar calender.c
+   ```cmd
+   gcc -o calendar.exe calender.c
    ```
 
 # Usage
 
 1. Run the program:
-   ```bash
-   ./calendar
+   ```cmd
+   calendar.exe
    ```
 2. Follow the on-screen prompts to:
    - Find the day of the week for a specific date.
