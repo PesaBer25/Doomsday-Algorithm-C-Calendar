@@ -37,7 +37,7 @@ int main(void){
         printf("Enter the Month and Year(MM YY): ");
         scanf("%d %d",&month,&year);
         day = day_of_week(date,month,year);
-        printf("\n\t%s %d Calender\n\n",month_day_words(-1,month));
+        printf("\n\t%s %d Calender\n\n",month_day_words(-1,month),year);
         print_calender(day,ends_on(month,year));
         author();
     }else if(option == 3){
